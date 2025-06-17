@@ -3,50 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AllohaTV Player</title>
+    <title>Centered Iframe Player</title>
     <style>
-        /* Добавьте стили для плеера, если нужно */
-        #player_iframe {
-            width: 100%;
-            height: 100%;
-            /* position: relative;  Если хотите absolute, то нужно указать размеры и position: relative у родителя */
+        body {
+            display: flex;          /* Используем flexbox для центрирования */
+            justify-content: center;  /* Центрирование по горизонтали */
+            align-items: center;      /* Центрирование по вертикали */
+            min-height: 100vh;       /* Занимаем всю высоту экрана */
+            margin: 0;               /* Убираем стандартные отступы body */
+            background-color: #f0f0f0; /* Светлый фон для визуального эффекта */
+        }
+
+        /* Дополнительные стили для iframe (необязательно) */
+        iframe {
+            border: none;           /* Убираем рамку iframe */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Небольшая тень */
         }
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://allohatv.github.io/insert-player.js"></script>
 </head>
 <body>
-<script src="https://aprt.alloviewroll.com/?token=77699102999cb63099f9007492830e"></script>
 
-    <div id="player_iframe">
-        <!-- Плеер будет вставлен сюда -->
-    </div>
-
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        function succes_function(data) {
-          console.log("Успешный ответ от AllohaTV API:", data);
-          // Здесь можно выполнить дополнительные действия при успешном ответе
-        }
-
-        function error_function(data) {
-          console.error("Ошибка от AllohaTV API:", data);
-          // Здесь можно обработать ошибку
-        }
-
-        var param_cdn = {
-          player_id: '#player_iframe', // ID блока где размещать iframe видео
-          kp: '464963', // Основной параметр. В данном случае - ID Кинопоиска, но можно использовать любой из параметров
-          token: '77699102999cb63099f9007492830e', // Ваш уникальный Токен (узнать можно в настройках профиля)
-          width: '100%', // Ширина для iframe, можно указывать проценты и px. Параметр необязательный
-          height: '100%', // Высота для iframe, можно указывать проценты и px. Параметр необязательный
-        };
-
-        // Вызов функции insert-player.js для вставки плеера
-        insertPlayer(param_cdn);
-      });
-    </script>
+    <iframe
+        src="https://Ascend-as.allarknow.online?kp=464963&token=77699102999cb63099f9007492830e"
+        frameborder="0"
+        scrolling="no"
+        allowfullscreen=""
+        width="800"
+        height="452">
+    </iframe>
 
 </body>
 </html>
