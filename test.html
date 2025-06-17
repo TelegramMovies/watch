@@ -12,6 +12,8 @@
             /* position: relative;  Если хотите absolute, то нужно указать размеры и position: relative у родителя */
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://allohatv.github.io/insert-player.js"></script>
 </head>
 <body>
 <script src="https://aprt.alloviewroll.com/?token=77699102999cb63099f9007492830e"></script>
@@ -20,30 +22,33 @@
         <!-- Плеер будет вставлен сюда -->
     </div>
 
-    <script src="https://allohatv.github.io/insert-player.js"></script>
 
     <script>
+      document.addEventListener('DOMContentLoaded', function() {
         function succes_function(data) {
-            console.log("Успешный ответ от AllohaTV API:", data);
-            // Здесь можно выполнить дополнительные действия при успешном ответе
+          console.log("Успешный ответ от AllohaTV API:", data);
+          // Здесь можно выполнить дополнительные действия при успешном ответе
         }
 
         function error_function(data) {
-            console.error("Ошибка от AllohaTV API:", data);
-            // Здесь можно обработать ошибку
+          console.error("Ошибка от AllohaTV API:", data);
+          // Здесь можно обработать ошибку
         }
 
         var param_cdn = {
-            player_id: '#player_iframe', // ID блока где размещать iframe видео
-            kp: '464963', // Основной параметр. В данном случае - ID Кинопоиска, но можно использовать любой из параметров
-            token: '77699102999cb63099f9007492830e', // Ваш уникальный Токен (узнать можно в настройках профиля)
-            width: '100%', // Ширина для iframe, можно указывать проценты и px. Параметр необязательный
-            height: '100%', // Высота для iframe, можно указывать проценты и px. Параметр необязательный
+          player_id: '#player_iframe', // ID блока где размещать iframe видео
+          kp: '464963', // Основной параметр. В данном случае - ID Кинопоиска, но можно использовать любой из параметров
+          token: '77699102999cb63099f9007492830e', // Ваш уникальный Токен (узнать можно в настройках профиля)
+          width: '100%', // Ширина для iframe, можно указывать проценты и px. Параметр необязательный
+          height: '100%', // Высота для iframe, можно указывать проценты и px. Параметр необязательный
         };
 
         // Вызов функции insert-player.js для вставки плеера
         insertPlayer(param_cdn);
+      });
     </script>
 
 </body>
 </html>
+
+
