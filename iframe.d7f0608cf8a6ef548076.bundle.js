@@ -1,0 +1,1 @@
+(()=>{"use strict";const t=document.getElementById("iframe"),e=window.location.href.split("?")[1];t.src=`https://telegrammovies.github.io/watch/index.html?${e}`})();
