@@ -1,0 +1,1 @@
+(()=>{"use strict";const t="https://telegrammovies.github.io/k1notelegrambot.github.io/watchbot/iframe.html?"+window.location.href.split("?")[1];window.location.href=t})();
