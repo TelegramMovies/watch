@@ -1,1 +1,0 @@
-(()=>{"use strict";const t="https://telegrammovies.github.io/k1notelegrambot.github.io/",e=document.getElementById("iframe"),o=window.location.href.split("?")[1];e.src=t+`index.html?${o}`,alert("Iframe to: "+t+`index.html?${o}`),console.log("Iframe to: "+t+`index.html?${o}`)})();
