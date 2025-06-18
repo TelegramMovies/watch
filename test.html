@@ -30,7 +30,10 @@
             text: 'Main Button'
         });
         Telegram.WebApp.MainButton.onClick(function () {
-            const data = JSON.stringify({ "test": 123 });
+            const data = JSON.stringify({
+                test: 123,
+                timestamp: Date.now(),
+            });
             Telegram.WebApp.sendData(data);
             alert("sended")
         })
