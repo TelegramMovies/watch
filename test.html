@@ -23,25 +23,64 @@
 </head>
 
 <body>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <button onclick="toggleMainButton();">Toggle Main Button</button>
     <script>
-        if (window.Telegram && window.Telegram.WebApp) {
-            Telegram.WebApp.ready();
-
-            // Настраиваем главную кнопку
-            Telegram.WebApp.MainButton.text = 'Choose Color';
-            Telegram.WebApp.MainButton.isVisible = true;
-
-            Telegram.WebApp.MainButton.onClick(function () {
-                const data = JSON.stringify({ "test": 123 });
-                Telegram.WebApp.sendData(data);
-                // Telegram.WebApp.close();
+        Telegram.WebApp.ready();
+        Telegram.WebApp.onEvent('themeChanged', function () {
+            document.documentElement.className = Telegram.WebApp.colorScheme;
+        });
+        Telegram.WebApp.MainButton.setParams({
+            text: 'Main Button'
+        });
+        Telegram.WebApp.MainButton.onClick(function () {
+            Telegram.WebApp.showAlert('Main Button was clicked')
+        });
+        Telegram.WebApp.MainButton.show();
+        function showPopup() {
+            Telegram.WebApp.showPopup({
+                title: 'Title',
+                message: 'Some message',
+                buttons: [
+                    { id: 'link', type: 'default', text: 'Open ton.org' },
+                    { type: 'cancel' },
+                ]
+            }, function (btn) {
+                if (btn === 'link') {
+                    Telegram.WebApp.openLink('https://ton.org/');
+                }
             });
+        };
 
-        } else {
-            console.warn("Telegram Web App API недоступен. Запустите в Telegram.");
+        // Function to toggle main TWA button
+        function toggleMainButton() {
+            if (Telegram.WebApp.MainButton.isVisible) {
+                Telegram.WebApp.MainButton.hide();
+            } else {
+                Telegram.WebApp.MainButton.show();
+            }
+        };
+
+        function setViewportData() {
+            var sizeEl = document.getElementById('viewport-params-size');
+            sizeEl.innerText = 'width: ' + window.innerWidth + ' x ' +
+                'height: ' + Telegram.WebApp.viewportStableHeight;
+
+            var expandEl = document.querySelector('#viewport-params-expand');
+            expandEl.innerText = 'Is Expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false');
         }
-    </script>
 
+        Telegram.WebApp.setHeaderColor('secondary_bg_color');
+
+        setViewportData();
+        Telegram.WebApp.onEvent('viewportChanged', setViewportData);
+
+        Telegram.WebApp.onEvent('themeChanged', function () {
+            document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
+        });
+
+
+    </script>
     <iframe src="https://Ascend-as.allarknow.online?kp=464963&token=77699102999cb63099f9007492830e" frameborder="0"
         scrolling="no" allowfullscreen="" width="800" height="452">
     </iframe>
