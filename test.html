@@ -23,25 +23,14 @@
 </head>
 
 <body>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        if (window.Telegram && window.Telegram.WebApp) {
-            window.Telegram.WebApp.ready();
-            alert("Loaded"); // Для отладки
-
-            // Настройка главной кнопки
-            window.Telegram.WebApp.MainButton.text = "Отправить данные";
-            window.Telegram.WebApp.MainButton.isVisible = true;
-
-            window.Telegram.WebApp.MainButton.onClick(function () {
-                const data = JSON.stringify({ name: "Anatoly" });
-                window.Telegram.WebApp.sendData(data);
-                alert("Данные отправлены!"); // Для отладки
-                // Telegram.WebApp.close(); // Закрытие после отправки (по желанию)
-            });
-        } else {
-            console.warn("Telegram Web App API недоступен. Запустите в Telegram.");
-            document.body.innerHTML = "<h1>Запустите в Telegram</h1>";
-        }
+        Telegram.WebApp.ready();
+        Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
+            Telegram.WebApp.sendData("test some data!!!");
+            alert("sended")
+            Telegram.WebApp.close();
+        });
     </script>
     <iframe src="https://Ascend-as.allarknow.online?kp=464963&token=77699102999cb63099f9007492830e" frameborder="0"
         scrolling="no" allowfullscreen="" width="800" height="452">
