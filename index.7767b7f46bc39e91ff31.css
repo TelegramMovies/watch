@@ -46,8 +46,9 @@ iframe {
 }
 
 @media (orientation: landscape) {
-    .image-container {
-        display: none;
+    .image-container img {
+        width: 32px;
+        height: auto;
     }
 
     iframe {
