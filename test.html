@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример встраиваемого плеера AllohaTV</title>
+
+    <!-- 1. Обязательно подключаем jQuery ДО плеерного скрипта -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h1>Тестовая страница</h1>
+
+    <!-- 2. Контейнер, куда вставится iframe -->
+    <div id="player_iframe"></div>
+
+    <!-- 3. Конфигурация плеера (обязательно выше подключения самого скрипта) -->
+    <script>
+        var param_cdn = {
+            player_id: '#player_iframe',       // ID блока, где будет видео
+            kp: 561,                   // ID фильма на Кинопоиске (или другой параметр)
+            token: '77699102999cb63099f9007492830e',                // Ваш персональный токен
+            width: '100%',                     // Ширина iframe (опционально)
+            height: '100%',                    // Высота iframe (опционально)
+            calback_success: 'succes_function',// Имя JS-функции при успехе (опционально)
+            calback_error: 'error_function',   // Имя JS-функции при ошибке (опционально)
+            alternative_iframe: '<iframe frameborder="0" allowfullscreen src="https://example.com/backup.mp4"></iframe>'
+        };
+
+        // Пример колбэков (можно удалить, если не нужны)
+        function succes_function(data) {
+            console.log('Плеер загружен:', data);
+        }
+        function error_function(data) {
+            console.error('Ошибка загрузки плеера:', data);
+        }
+    </script>
+
+    <!-- 4. Сам скрипт плеера (обязательно после jQuery и конфига) -->
+    <script src="https://allohatv.github.io/insert-player.js"></script>
+
+</body>
+</html>
