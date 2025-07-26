@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: black;
+    align-items: center;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.image-container {
+    margin-bottom: 20px;
+}
+
+#iframe-container {
+    width: 100%;
+    height: 40vh;
+    margin-bottom: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: hidden;
+}
+
+#banner-container {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    /* Дополнительный отступ сверху */
+}
+
+#banner-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#banner {
+    width: 75%;
+    height: 75px;
+    object-fit: fill;
+    display: none;
+}
+
+#ErrorText {
+    color: white;
+    font-size: 1em;
+    font-family: sans-serif;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (orientation: portrait) {
+    .image-container {
+        width: 26px;
+        height: 26px;
+        position: relative;
+        /* Изменено с absolute на relative */
+        top: auto;
+        left: auto;
+        transform: none;
+        z-index: 10;
+        margin-top: 20px;
+        /* Добавлен отступ сверху */
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #iframe-container {
+        position: relative;
+        height: 40vh;
+    }
+
+    iframe {
+        position: relative;
+        height: 100%;
+    }
+}
+
+@media (orientation: landscape) {
+    .image-container {
+        display: none;
+    }
+
+    #banner-container {
+        display: none;
+    }
+
+    #iframe-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
