@@ -46,9 +46,7 @@ iframe {
 
 #bottom-image {
     width: 200px;
-    height: 60px;
-    object-fit: contain;
-    object-position: center;
+    height: auto;
     display: block;
     margin: 0 auto;
 }
