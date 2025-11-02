@@ -45,7 +45,8 @@ iframe {
 }
 
 #bottom-image {
-    width: 160x;
+    width: 160px;
+    height: auto;
     display: block;
     margin: 0 auto;
 }
