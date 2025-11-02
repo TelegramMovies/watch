@@ -45,7 +45,7 @@ iframe {
 }
 
 #bottom-image {
-    width: 200px;
+    width: 160x;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -80,7 +80,7 @@ iframe {
     }
 
     #bottom-image-link {
-        top: calc(50% + 2em);
+        top: calc(50% + 4em);
     }
 }
 
