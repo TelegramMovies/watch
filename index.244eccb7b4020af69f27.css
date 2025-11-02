@@ -29,15 +29,10 @@ iframe {
     text-align: center;
     position: absolute;
     top: 50%;
-    /* Размещаем по вертикали в центре */
     left: 50%;
-    /* Размещаем по горизонтали в центре */
     transform: translate(-50%, -50%);
-    /* Сдвигаем на половину ширины и высоты, чтобы центрировать абсолютно */
     z-index: 1;
-    /* Убедитесь, что текст поверх iframe */
     width: 100%;
-    /* Растягиваем на всю ширину */
 }
 
 #bottom-image-link {
@@ -50,8 +45,10 @@ iframe {
 }
 
 #bottom-image {
-    max-width: 100%;
-    height: auto;
+    width: 200px;
+    height: 60px;
+    object-fit: contain;
+    object-position: center;
     display: block;
     margin: 0 auto;
 }
