@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Подключить WireGuard</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      text-align: center;
+      padding: 30px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    h1 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    .btn {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 14px 28px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .btn:hover {
+      background: #45a049;
+    }
+    .note {
+      font-size: 14px;
+      color: #666;
+      margin-top: 30px;
+    }
+    .qr {
+      margin-top: 20px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Подключить VPN</h1>
+  <p>Нажмите кнопку ниже, чтобы открыть WireGuard и импортировать конфигурацию.</p>
+
+  <!-- ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ НА СВОЙ BASE64-КОДИРОВАННЫЙ КОНФИГ -->
+  <a href="wg://cm1bSW50ZXJmYWNlXQpQcml2YXRlS2V5ID0gWDhBZ0pTQXNjUkpVbVRzZkx2bkdYUjRZVHdqV0ZuT1ZuY3lLZFhXZ0JjRzAKQWRkcmVzcyA9IDEwLjguMC4yLzI0CltQZWVyXQpQdWJsaWNLZXkgPSBLbFZkV2p1Rk5XZG5xMzJmSGdJNkJvZ1pZa1hKQXZ0aE5XQ0xjMk1QdFZrWjBzCkFsbG93ZWRJUHMgPSAwLjAuMC4wLzAKRW5kcG9pbnQgPSBleGFtcGxlLmNvbTo1MTgyMAo=" 
+     class="btn">
+    Открыть в WireGuard
+  </a>
+
+  <div class="note">
+    <p>Если кнопка не работает:</p>
+    <p>1. Убедитесь, что установлено приложение <a href="https://apps.apple.com/app/wireguard/id1441195209" target="_blank">WireGuard</a> (iOS) или из <a href="https://play.google.com/store/apps/details?id=com.wireguard.android" target="_blank">Google Play</a> (Android).<br>
+    2. Или отсканируйте QR-код с конфигурацией через само приложение.</p>
+  </div>
+</body>
+</html>
